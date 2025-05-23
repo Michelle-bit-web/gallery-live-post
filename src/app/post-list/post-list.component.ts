@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostComponent } from "../post/post.component";
 import { Post } from '../post.models';
 import { CommonModule } from '@angular/common';
@@ -16,5 +16,9 @@ import { PostService } from '../post.service';
 export class PostListComponent {
    listOfPosts: Post[] = [];
 
-   constructor(private postService: PostService){}
+   constructor(private postService: PostService){};
+
+   ngOnInit() : void {
+    this.listOfPosts = this.postService.getPost();
+   }
 }

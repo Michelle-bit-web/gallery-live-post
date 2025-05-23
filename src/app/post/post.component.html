@@ -1,12 +1,12 @@
-<h2>Nature</h2>
-<p>A text</p>
+<h2>{{post?.title}}</h2>
+<p>{{post?.description}}</p>
 <img 
-    src= "/img/flower-field.png" alt="image of a field of flowers"
+    src= {{post?.imagePath}} alt=""
     class="img-responsive"
 >
 
-<p>Author: test(at)test.com</p>
-<p>Date: 1 Jan 2021</p>
+<p>Author: {{post?.author}}</p>
+<p>{{post?.dateTimeCreated}}</p>
 <button>Edit</button>
 <button>Delete</button>
 

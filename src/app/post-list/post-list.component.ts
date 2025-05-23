@@ -14,14 +14,14 @@ export class PostListComponent {
   listOfPosts: Post[] = [
     new Post(
       "Nature", 
-      "A text", 
+      "Here you see a paradise given from Nature.", 
       "/img/flower-field.png", 
       "test(at)test.com", 
       new Date()
     ),
     new Post(
-      "Nature", 
-      "A text", 
+      "In the Forest", 
+      "Deep within the forests, you will find the best view.", 
       "/img/forest.png", 
       "test2(at)test2.com", 
       new Date(),

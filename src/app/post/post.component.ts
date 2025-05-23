@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
+import { Post } from '../post.models';
 
 @Component({
   selector: 'app-post',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './post.component.scss'
 })
 export class PostComponent {
+@Input() post?: Post;
 
+ngOnInit(): void {
+  console.log(this.post);
+}
 }

@@ -1,3 +1,3 @@
 <p>I was added to main</p>
-<app-post [post]="listOfPosts[0]"></app-post>
-<app-post [post]="listOfPosts[1]"></app-post>
+<app-post *ngFor="let singlePost of listOfPosts" [post]="singlePost"></app-post>
+

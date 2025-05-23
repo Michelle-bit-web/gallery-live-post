@@ -1,0 +1,23 @@
+import {Injectable} from '@angular/core';
+import { Post } from './post.models';
+
+@Injectable({ providedIn: 'root' })
+export class PostService {
+    
+    listOfPosts: Post[] = [
+    new Post(
+      "Nature", 
+      "Here you see a paradise given from Nature.", 
+      "/img/flower-field.png", 
+      "test(at)test.com", 
+      new Date()
+    ),
+    new Post(
+      "In the Forest", 
+      "Deep within the forests, you will find the best view.", 
+      "/img/forest.png", 
+      "test2(at)test2.com", 
+      new Date(),
+    )
+  ];
+}

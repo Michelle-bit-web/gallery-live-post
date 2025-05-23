@@ -1,3 +1,6 @@
 <p>I was added to main</p>
-<app-post *ngFor="let singlePost of listOfPosts" [post]="singlePost"></app-post>
+<app-post 
+*ngFor="let singlePost of listOfPosts ; let i = index" 
+[post]="singlePost" 
+[index]="i"></app-post>
 

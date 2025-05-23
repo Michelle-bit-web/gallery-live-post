@@ -20,4 +20,28 @@ export class PostService {
       new Date(),
     )
   ];
+
+//first facility
+
+  getPost(){
+    return this.listOfPosts;
+  }
+
+  //second facility
+
+  deletePost(index: number){
+    this.listOfPosts.splice(index,1);
+  }
+
+  //third facility
+
+  addPost(post: Post){
+    this.listOfPosts.push(post);
+  }
+
+  //fourth facility
+
+  updatePost(index: number, post: Post){
+    this.listOfPosts[index] = post;
+  }
 }

@@ -62,7 +62,11 @@ export class PostEditComponent {
     );
 
     //Calling Service
-    this.postService.addPost(post);
+    if(this.editMode){
+      this.postService.updatePost(this.index, post);
+    } else {
+      this.postService.addPost(post);
+    }
 
     //Navigation to Home page when new post was added
     this.router.navigate(["/post-list"])

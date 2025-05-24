@@ -23,7 +23,7 @@ export class PostService {
 
 //first facility
 
-  getPost(){
+  getPosts(){
     return this.listOfPosts;
   }
 
@@ -43,5 +43,11 @@ export class PostService {
 
   updatePost(index: number, post: Post){
     this.listOfPosts[index] = post;
+  }
+
+  //fifth facility
+
+  getPost(index: number){
+    return this.listOfPosts[index];
   }
 }

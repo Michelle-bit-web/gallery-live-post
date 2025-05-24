@@ -14,15 +14,19 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   templateUrl: './post-edit.component.html',
   styleUrl: './post-edit.component.scss'
 })
+
 export class PostEditComponent {
   form!: FormGroup;
+  index: number = 0;
+
   constructor(private postService: PostService, private router: Router, private route: ActivatedRoute){};
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       if(params['index']){
-        console.log(['index'], params);
-      }
+        this.index = params['index'];
+        this.postService.getPost(this.index);
+      };
     });
 
     this.form = new FormGroup({

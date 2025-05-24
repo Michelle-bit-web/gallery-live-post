@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { Post } from '../post.models';
 import { PostService } from '../post.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-post-edit',
-  imports: [RouterModule,
+  imports: [
+
+    RouterModule,
     ReactiveFormsModule,
   ],
   templateUrl: './post-edit.component.html',
@@ -13,7 +16,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class PostEditComponent {
   form!: FormGroup;
-  constructor(private postService: PostService){};
+  constructor(private postService: PostService, private router: Router){};
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -25,7 +28,26 @@ export class PostEditComponent {
   }
 
   onSubmit(){
-    console.log('onSubit() is called');
-     console.log(this.form);
+    const title = this.form.value.title;
+    const description = this.form.value.description;
+    const imagePath = this.form.value.imagePath;
+
+    const post: Post = new Post(
+      title, 
+      description, 
+      imagePath, 
+      "test(at)test.com", 
+      new Date()
+    );
+
+    //Calling Service
+    this.postService.addPost(post);
+
+    //Navigation to Home page when new post was added
+    this.router.navigate(["/post-list"])
   }
+
+  
+
+  
 }

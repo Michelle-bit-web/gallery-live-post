@@ -4,6 +4,7 @@ import { AuthComponent } from './auth/auth.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
 
 export const routes: Routes = [
+     {path: '', redirectTo: '/post-list', pathMatch: 'full'},
     {path: 'post-list', component: PostListComponent},
     {path: 'auth', component: AuthComponent},
     {path: 'post-add', component: PostEditComponent},

@@ -52,4 +52,14 @@ export class PostService {
   getPost(index: number){
     return this.listOfPosts[index];
   }
+
+  //sixth facility
+
+  likePost(index: number){
+    this.listOfPosts[index].numberOfLikes += 1;
+  }
+
+  dislikePost(index: number){
+    this.listOfPosts[index].numberOfLikes -= 1;
+  }
 }

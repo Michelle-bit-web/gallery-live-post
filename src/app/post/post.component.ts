@@ -29,4 +29,14 @@ onDelete(){
 onEdit(){
 this.router.navigate(["/post-edit", this.index])
 }
+
+likePost(){
+    console.log('you liked the post');
+    this.postService.likePost(this.index);
+  }
+
+  dislikePost(){
+    console.log('like was removed');
+    this.postService.dislikePost(this.index);
+  }
 }

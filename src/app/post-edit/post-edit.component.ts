@@ -72,8 +72,4 @@ export class PostEditComponent {
     //Navigation to Home page when new post was added
     this.router.navigate(["/post-list"])
   }
-
-  
-
-  
 }

@@ -3,7 +3,16 @@
 <img src= {{post?.imagePath}} class="img-responsive">
 <p>Author: {{post?.author}}</p>
 <p>{{post?.dateTimeCreated}}</p>
-<p>{{post?.numberOfLikes}}</p>
+<button type="button" class="btn" (click)="dislikePost()">
+    <img src="/img/chat-heart-fill.svg" alt="">
+    ({{post?.numberOfLikes}})
+</button>
+<button type="button" class="btn" (click)="likePost()">
+    <img src="/img/chat-heart.svg" alt="">
+    ({{post?.numberOfLikes}})
+</button> 
+<br>
+<br>
 <button class="btn btn-success" (click)="onEdit()">Edit</button> |
 <button class="btn btn-danger" (click)="onDelete()">Delete</button>
 

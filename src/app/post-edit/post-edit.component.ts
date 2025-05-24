@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, Params } from '@angular/router';
 import { Post } from '../post.models';
 import { PostService } from '../post.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -16,9 +16,15 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class PostEditComponent {
   form!: FormGroup;
-  constructor(private postService: PostService, private router: Router){};
+  constructor(private postService: PostService, private router: Router, private route: ActivatedRoute){};
 
   ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      if(params['index']){
+        console.log(['index'], params);
+      }
+    });
+
     this.form = new FormGroup({
       title: new FormControl(
         null, [Validators.required]),

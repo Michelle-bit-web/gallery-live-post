@@ -27,6 +27,6 @@ onDelete(){
 }
 
 onEdit(){
-this.router.navigate(["/post-edit"])
+this.router.navigate(["/post-edit", this.index])
 }
 }

@@ -22,18 +22,24 @@ export class PostEditComponent {
   constructor(private postService: PostService, private router: Router, private route: ActivatedRoute){};
 
   ngOnInit(): void {
+    let title = '';
+    let description = '';
+    let imagePath = '';
+
     this.route.params.subscribe((params: Params) => {
       if(params['index']){
         this.index = params['index'];
-        this.postService.getPost(this.index);
+        const returnedPost = this.postService.getPost(this.index);
+        title = returnedPost.title;
+        description = returnedPost.description;
+        imagePath = returnedPost.imagePath;
       };
     });
 
     this.form = new FormGroup({
-      title: new FormControl(
-        null, [Validators.required]),
-      description: new FormControl(null, [Validators.required]),
-      imagePath: new FormControl(null, [Validators.required]),
+      title: new FormControl(title, [Validators.required]),
+      description: new FormControl(description, [Validators.required]),
+      imagePath: new FormControl(imagePath, [Validators.required]),
     })
   }
 

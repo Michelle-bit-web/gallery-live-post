@@ -13,6 +13,7 @@
              <div class="form-group">
                 <label for="">Image Path</label>
                 <input formControlName="imagePath" class="form-control" type="text" name="" id="">
+                <img class="img-responsive card" src="{{form.value.imagePath}}" alt="Preview of image comes here">
             </div>
             <button class="btn btn-success" type="submit" [disabled]="form.invalid">Save</button> |  
             <button class="btn btn-primary" type="reset">Clear</button>

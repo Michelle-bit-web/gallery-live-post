@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, RouterModule, Params } from '@angular/router';
 import { Post } from '../post.models';
 import { PostService } from '../post.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-post-edit',
@@ -10,6 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
     RouterModule,
     ReactiveFormsModule,
+    CommonModule,
   ],
   templateUrl: './post-edit.component.html',
   styleUrl: './post-edit.component.scss'
@@ -18,6 +20,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class PostEditComponent {
   form!: FormGroup;
   index: number = 0;
+  editMode: boolean = false;
 
   constructor(private postService: PostService, private router: Router, private route: ActivatedRoute){};
 
@@ -33,6 +36,8 @@ export class PostEditComponent {
         title = returnedPost.title;
         description = returnedPost.description;
         imagePath = returnedPost.imagePath;
+
+        this.editMode = true;
       };
     });
 

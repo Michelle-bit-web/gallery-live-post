@@ -18,13 +18,9 @@ export class PostEditComponent {
   ngOnInit(): void {
     this.form = new FormGroup({
       title: new FormControl(
-        null, 
-        [
-          Validators.required, 
-          Validators.maxLength(10)
-        ]),
-      description: new FormControl(null),
-      imagePath: new FormControl(null),
+        null, [Validators.required]),
+      description: new FormControl(null, [Validators.required]),
+      imagePath: new FormControl(null, [Validators.required]),
     })
   }
 

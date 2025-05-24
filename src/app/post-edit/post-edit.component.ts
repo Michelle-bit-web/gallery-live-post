@@ -58,7 +58,8 @@ export class PostEditComponent {
       description, 
       imagePath, 
       "test(at)test.com", 
-      new Date()
+      new Date(),
+      0
     );
 
     //Calling Service

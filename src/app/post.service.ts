@@ -10,7 +10,8 @@ export class PostService {
       "Here you see a paradise given from Nature.", 
       "/img/flower-field.png", 
       "test(at)test.com", 
-      new Date()
+      new Date(),
+      5
     ),
     new Post(
       "In the Forest", 
@@ -18,6 +19,7 @@ export class PostService {
       "/img/forest.png", 
       "test2(at)test2.com", 
       new Date(),
+      5
     )
   ];
 
